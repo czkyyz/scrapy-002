@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 import scrapy
-
+from shiyanlou.items import CourseItem
 
 class CoursesSpider(scrapy.Spider):
     name = 'courses'
-
+    
+    @property
     def start_urls(self):
         url1 = 'https://github.com/shiyanlou?page={}&tab=repositories'
         return (url1.format(i) for i in range(1,5))
